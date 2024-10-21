@@ -4,9 +4,10 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5500;
 
-app.get("/", (req, res) => {
-  res.status(200).json({ success: true, msg: "Welcome to KeelWorks back-end application" });
-});
+// ********** Routes ***********
+const contact = require('./routes/contact');
+
+app.use("/api/v1/contact", contact);
 
 
 
