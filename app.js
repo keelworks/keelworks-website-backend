@@ -6,6 +6,7 @@ const port = process.env.PORT || 5500;
 
 // ********** Routes ***********
 const contact = require('./routes/contact');
+app.use(express.json());
 
 app.use("/api/v1/contact", contact);
 
