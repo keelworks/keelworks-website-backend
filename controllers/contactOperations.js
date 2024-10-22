@@ -1,9 +1,10 @@
 // ** no need for axios **
-const axios = require('axios');
 
 
 const FormData = require('form-data'); 
 const {StatusCodes} = require('http-status-codes');
+const {badReuest} = require('../errors');
+const BadRequest = require('../errors/badRequest');
 
 const url = 'localhost:5500/api/v1/contact';
 // const realKeelWorksURL = 'https://script.google.com/macros/s/AKfycbyE3WnCqDFPWED7P3VUtKY6_unzSDPGS4X0kYGw4yBFKUnGGdP2uy-2wkWhZf2vk7wX/exec';
@@ -27,12 +28,12 @@ const sendEmail = async(req, res)=>{
     //   body: formData,  // Send formData just like in your front-end
     // });
 
-      console.log("Your email has been sent!", data);
+      console.log("Your email has been sent successfully!", data);
       // console.log("Here is FormData:", formData);
     }
   } 
   catch (error) {
-    console.log(`The email wasn't sent! ${error}`);
+    throw new BadRequest('Your message was not sent! There is a problem with the provided data.');
   }
   res.status(StatusCodes.OK).send("email was sent2!");
 }
