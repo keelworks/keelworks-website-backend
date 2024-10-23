@@ -8,12 +8,13 @@ const port = process.env.PORT || 5500;
 // ********** Routes ***********
 const contact = require('./routes/contact');
 const subscribe = require('./routes/subscribe');
+const signup = require('./routes/signup');
 app.use(express.json());
 app.use(cors());
 
 app.use("/api/v1/contact", contact);
 app.use("/api/v1/subscribe", subscribe);
-app.use("/api/v1/signup", subscribe);
+app.use("/api/v1/signup", signup);
 
 
 

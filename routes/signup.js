@@ -4,8 +4,8 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer();
 
-const{subscribe} = require('../controllers/subscribeOperations');
+const{signup} = require('../controllers/signupOperations');
 
-router.route('/').post(upload.none(), subscribe);
+router.route('/').post(upload.none(), signup);
 
 module.exports = router;
