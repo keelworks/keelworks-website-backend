@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use("/api/v1/contact", contact);
 app.use("/api/v1/subscribe", subscribe);
+app.use("/api/v1/signup", subscribe);
 
 
 
