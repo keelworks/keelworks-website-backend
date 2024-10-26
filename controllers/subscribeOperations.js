@@ -1,10 +1,13 @@
 
+const axios = require ('axios');
 const FormData = require('form-data'); 
 const {StatusCodes} = require('http-status-codes');
 const {BadRequestError} = require('../errors');
 
-const url = 'localhost:5500/api/v1/contact';
 // const realKeelWorksURL = "https://script.google.com/macros/s/AKfycbyjny6A1XeEKYTS3M0yNMLX97hO1SRkMudZUddPKIDnPMCAh5wE6D7kxZlo9FyD3NPspQ/exec";
+
+const urlTest = 'https://script.google.com/a/macros/keelworks.org/s/AKfycbzhbpvQsNgjDXJNeWCPLeFePbtFN8uPoLivWC_H44ltfSUbbUvsbQcN9yWM302skBtt/exec';
+
 
 
 const subscribe = async(req, res)=>{
@@ -16,10 +19,12 @@ const subscribe = async(req, res)=>{
       const formData = new FormData();
       formData.append('Email', data.Email);
 
-    //   const response = await fetch(url, {
+    //   const response = await fetch(urlTest, {
     //   method: 'POST',
     //   body: formData,
+    //   muteHttpExceptions: true,
     // });
+      const response = await axios.post(urlTest, formData, {headers:{'Content-Type': 'multipart/form-data',},});
 
       console.log("Your email address has been sent successfully!", data);
       // console.log("Here is FormData:", formData);
