@@ -13,6 +13,7 @@ const urlTest = 'https://script.google.com/a/macros/keelworks.org/s/AKfycbzhbpvQ
 const subscribe = async(req, res)=>{
   try {
     // ** changing the object to a normal JS object: ***
+    // ** have to receive JSON data here
     const data = Object.assign({}, req.body);
 
     if(data){
