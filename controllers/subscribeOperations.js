@@ -14,11 +14,14 @@ const subscribe = async(req, res)=>{
   try {
     // ** changing the object to a normal JS object: ***
     // ** have to receive JSON data here
-    const data = Object.assign({}, req.body);
 
-    if(data){
+    // const data = Object.assign({}, req.body);
+
+    const {email} = req.body;
+    // console.log('here is the data:', req.body);
+    if(email){
       const formData = new FormData();
-      formData.append('Email', data.Email);
+      formData.append('Email', email);
 
     //   const response = await fetch(urlTest, {
     //   method: 'POST',
@@ -27,7 +30,7 @@ const subscribe = async(req, res)=>{
     // });
       const response = await axios.post(urlTest, formData, {headers:{'Content-Type': 'multipart/form-data',},});
 
-      console.log("Your email address has been sent successfully!", data);
+      console.log("Your email address has been sent successfully!", email);
       // console.log("Here is FormData:", formData);
     }
   } 
