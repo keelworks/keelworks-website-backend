@@ -13,12 +13,9 @@ const urlTest = 'https://script.google.com/a/macros/keelworks.org/s/AKfycbzhbpvQ
 const subscribe = async(req, res)=>{
   try {
     // ** changing the object to a normal JS object: ***
-    // ** have to receive JSON data here
-
     // const data = Object.assign({}, req.body);
 
     const {email} = req.body;
-    // console.log('here is the data:', req.body);
     if(email){
       const formData = new FormData();
       formData.append('Email', email);
@@ -31,7 +28,6 @@ const subscribe = async(req, res)=>{
       const response = await axios.post(urlTest, formData, {headers:{'Content-Type': 'multipart/form-data',},});
 
       console.log("Your email address has been sent successfully!", email);
-      // console.log("Here is FormData:", formData);
     }
   } 
   catch (error) {
