@@ -3,7 +3,7 @@ const FormData = require('form-data');
 const {StatusCodes} = require('http-status-codes');
 const {BadRequestError} = require('../errors');
 
-const urlTest = 'localhost:5500/api/v1/contact';
+const urlTest = 'https://script.google.com/macros/s/AKfycbytKVKRPQA03UYxoyWhOUprekY10vKSPdDpFGpyheqsQ21uvG1SBCg7MsDETatOsdKf/exec';
 // const realKeelWorksURL = 'https://script.google.com/macros/s/AKfycbyE3WnCqDFPWED7P3VUtKY6_unzSDPGS4X0kYGw4yBFKUnGGdP2uy-2wkWhZf2vk7wX/exec';
 
 
@@ -33,7 +33,8 @@ const sendEmail = async(req, res)=>{
     //   body: formData,
     // });
 
-      console.log("Your email has been sent successfully!", data);
+      const response = await axios.post(urlTest, formData, {headers:{'Content-Type': 'multipart/form-data',},});
+      console.log("Your email has been sent successfully!");
       // console.log("Here is FormData:", formData);
     }
   } 
