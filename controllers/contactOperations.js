@@ -1,26 +1,34 @@
-
+const axios = require ('axios');
 const FormData = require('form-data'); 
 const {StatusCodes} = require('http-status-codes');
 const {BadRequestError} = require('../errors');
 
-const url = 'localhost:5500/api/v1/contact';
+const urlTest = 'localhost:5500/api/v1/contact';
 // const realKeelWorksURL = 'https://script.google.com/macros/s/AKfycbyE3WnCqDFPWED7P3VUtKY6_unzSDPGS4X0kYGw4yBFKUnGGdP2uy-2wkWhZf2vk7wX/exec';
 
 
 const sendEmail = async(req, res)=>{
   try {
     // ** changing the object to a normal JS object: ***
-    const data = Object.assign({}, req.body);
+    // const data = Object.assign({}, req.body);
 
-    if(data){
+    const {
+      firstName,
+      lastName,
+      email,
+      subject,
+      message,
+    } = req.body;
+
+    if(req.body){
       const formData = new FormData();
-      formData.append('firstName', data.firstName);
-      formData.append('lastName', data.lastName);
-      formData.append('email', data.email);
-      formData.append('subject', data.subject);
-      formData.append('message', data.message);
+      formData.append('firstName', firstName);
+      formData.append('lastName', lastName);
+      formData.append('email', email);
+      formData.append('subject', subject);
+      formData.append('message', message);
 
-    //   const response = await fetch(url, {
+    //   const response = await fetch(urlTest, {
     //   method: 'POST',
     //   body: formData,
     // });
