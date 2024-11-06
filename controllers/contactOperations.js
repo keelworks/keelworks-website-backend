@@ -9,9 +9,6 @@ const urlTest = 'https://script.google.com/macros/s/AKfycbytKVKRPQA03UYxoyWhOUpr
 
 const sendEmail = async(req, res)=>{
   try {
-    // ** changing the object to a normal JS object: ***
-    // const data = Object.assign({}, req.body);
-
     const {
       firstName,
       lastName,
