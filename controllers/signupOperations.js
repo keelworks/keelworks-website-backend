@@ -13,12 +13,23 @@ const signup = async(req, res)=>{
     const data = Object.assign({}, req.body);
 
     if(data){
-      const formData = new FormData();
-      formData.append('firstName', data.firstName);
-      formData.append('lastName', data.lastName);
-      formData.append('email', data.email);
-      formData.append('subject', data.subject);
-      formData.append('message', data.message);
+      const data = new FormData();
+      data.append("First Name", filteredData.firstName);
+      data.append("Last Name", filteredData.lastName);
+      data.append("Email", filteredData.email);
+      data.append("Contact No", filteredData.contactNo);
+      data.append("City", filteredData.city);
+      data.append("State", filteredData.state);
+      data.append("Country", filteredData.country);
+      data.append("Volunteer Position", filteredData.volunteerPosition);
+      data.append("Brief Info", filteredData.briefInfo);
+      data.append("Skills And Experience", filteredData.skillsAndExperience);
+      data.append("Volunteer Experience", filteredData.volunteerExperience);
+      data.append("Why Keelworks", filteredData.whyKeelworks);
+      data.append("Goal Or Expectation", filteredData.goalOrExpectation);
+      data.append("Additional Info", filteredData.additionalInfo);
+      data.append("Working Days", filteredData.daysCheckbox);
+      data.append("Working Hours", filteredData.workingHours);
 
     //   const response = await fetch(url, {
     //   method: 'POST',
