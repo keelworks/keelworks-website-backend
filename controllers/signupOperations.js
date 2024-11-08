@@ -10,9 +10,52 @@ const url = 'localhost:5500/api/v1/signup';
 const signup = async(req, res)=>{
   try {
     // ** changing the object to a normal JS object: ***
-    const data = Object.assign({}, req.body);
+    // const data = Object.assign({}, req.body);
 
+    
     if(data){
+      const {
+        firstName,
+        lastName,
+        email,
+        contactNo,
+        city,
+        state,
+        country,
+        volunteerPosition,
+        briefInfo,
+        skillsAndExperience,
+        volunteerExperience,
+        whyKeelworks,
+        goalOrExpectation,
+        additionalInfo,
+        daysCheckbox,
+        workingHours,
+        references,
+      } = req.body;
+  
+      const userInput = {
+          firstName,
+          lastName,
+          email,
+          contactNo,
+          city,
+          state,
+          country,
+          volunteerPosition,
+          briefInfo,
+          skillsAndExperience,
+          volunteerExperience,
+          whyKeelworks,
+          goalOrExpectation,
+          additionalInfo,
+          daysCheckbox,
+          workingHours,
+          references,
+        };
+  
+      const filteredData = filterCheckboxes(userInput);
+
       const data = new FormData();
       data.append("First Name", filteredData.firstName);
       data.append("Last Name", filteredData.lastName);
