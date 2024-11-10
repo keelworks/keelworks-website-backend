@@ -3,7 +3,7 @@ const FormData = require('form-data');
 const {StatusCodes} = require('http-status-codes');
 const {BadRequestError} = require('../errors');
 
-const url = 'localhost:5500/api/v1/signup';
+const urlTest = 'https://script.google.com/macros/s/AKfycbytKVKRPQA03UYxoyWhOUprekY10vKSPdDpFGpyheqsQ21uvG1SBCg7MsDETatOsdKf/exec';
 // const realKeelWorksURL = 'https://script.google.com/macros/s/AKfycbwwlgVzJv42ERjRKso-pk8Xu9HD3GZl4nxdEltQ3nEzNcX_f9U0_U2ww4kZPlqZi51_Yg/exec';
 
 
@@ -13,48 +13,9 @@ const signup = async(req, res)=>{
     // const data = Object.assign({}, req.body);
 
     
-    if(data){
-      const {
-        firstName,
-        lastName,
-        email,
-        contactNo,
-        city,
-        state,
-        country,
-        volunteerPosition,
-        briefInfo,
-        skillsAndExperience,
-        volunteerExperience,
-        whyKeelworks,
-        goalOrExpectation,
-        additionalInfo,
-        daysCheckbox,
-        workingHours,
-        references,
-      } = req.body;
-  
-      const userInput = {
-          firstName,
-          lastName,
-          email,
-          contactNo,
-          city,
-          state,
-          country,
-          volunteerPosition,
-          briefInfo,
-          skillsAndExperience,
-          volunteerExperience,
-          whyKeelworks,
-          goalOrExpectation,
-          additionalInfo,
-          daysCheckbox,
-          workingHours,
-          references,
-        };
-  
-      const filteredData = filterCheckboxes(userInput);
+    if(req.body){
+
+      const filteredData = {...req.body};
 
       const data = new FormData();
       data.append("First Name", filteredData.firstName);
