@@ -25,7 +25,7 @@ const signup = async(req, res)=>{
       formData.append("Volunteer Position", filteredData.volunteerPosition);
       formData.append("Brief Info", filteredData.briefInfo);
       formData.append("Skills And Experience", filteredData.skillsAndExperience);
-      formData.append("Volunteer Experience", filteredData.volunteerExperience);
+      formData.append("Volunteer Experience", "N/A");
       formData.append("Why Keelworks", filteredData.whyKeelworks);
       formData.append("Goal Or Expectation", filteredData.goalOrExpectation);
       formData.append("Additional Info", filteredData.additionalInfo);
