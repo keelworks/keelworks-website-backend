@@ -25,62 +25,65 @@ const signup = async(req, res)=>{
       formData.append("Volunteer Position", filteredData.volunteerPosition);
       formData.append("Brief Info", filteredData.briefInfo);
       formData.append("Skills And Experience", filteredData.skillsAndExperience);
+      // formData.append("Volunteer Experience", filteredData.volunteerExperience);
       formData.append("Volunteer Experience", "N/A");
-      formData.append("Why Keelworks", filteredData.whyKeelworks);
-      formData.append("Goal Or Expectation", filteredData.goalOrExpectation);
+      // formData.append("Why Keelworks", filteredData.whyKeelworks);
+      formData.append("Why Keelworks", "N/A");
+      // formData.append("Goal Or Expectation", filteredData.goalOrExpectation);
+      formData.append("Goal Or Expectation", "N/A");
       formData.append("Additional Info", filteredData.additionalInfo);
       formData.append("Working Days", filteredData.daysCheckbox);
       formData.append("Working Hours", filteredData.workingHours);
 
       // /*----------------Append References in Request Payload------------*/
 
-      formData.append(
-        "Reference 1 First Name",
-        filteredData.reference1RefFirstName ?? " "
-      );
-      formData.append(
-        "Reference 1 Last Name",
-        filteredData.reference1RefLastName ?? " "
-      );
-      formData.append("Reference 1 Email", filteredData.reference1RefEmail ?? " ");
-      formData.append(
-        "Reference 1 Contact No",
-        filteredData.reference1RefContactNo ?? " "
-      );
-      formData.append("Reference 1 City", filteredData.reference1RefCity ?? " ");
-      formData.append("Reference 1 State", filteredData.reference1RefState ?? " ");
-      formData.append(
-        "Reference 1 Country",
-        filteredData.reference1RefCountry ?? " "
-      );
-      formData.append(
-        "Reference 1 Relationship",
-        filteredData.reference1RelationshipToRef ?? " "
-      );
+      // formData.append(
+      //   "Reference 1 First Name",
+      //   filteredData.reference1RefFirstName ?? " "
+      // );
+      // formData.append(
+      //   "Reference 1 Last Name",
+      //   filteredData.reference1RefLastName ?? " "
+      // );
+      // formData.append("Reference 1 Email", filteredData.reference1RefEmail ?? " ");
+      // formData.append(
+      //   "Reference 1 Contact No",
+      //   filteredData.reference1RefContactNo ?? " "
+      // );
+      // formData.append("Reference 1 City", filteredData.reference1RefCity ?? " ");
+      // formData.append("Reference 1 State", filteredData.reference1RefState ?? " ");
+      // formData.append(
+      //   "Reference 1 Country",
+      //   filteredData.reference1RefCountry ?? " "
+      // );
+      // formData.append(
+      //   "Reference 1 Relationship",
+      //   filteredData.reference1RelationshipToRef ?? " "
+      // );
 
-      formData.append(
-        "Reference 2 First Name",
-        filteredData.reference2RefFirstName ?? " "
-      );
-      formData.append(
-        "Reference 2 Last Name",
-        filteredData.reference2RefLastName ?? " "
-      );
-      formData.append("Reference 2 Email", filteredData.reference2RefEmail ?? " ");
-      formData.append(
-        "Reference 2 Contact No",
-        filteredData.reference2RefContactNo ?? " "
-      );
-      formData.append("Reference 2 City", filteredData.reference2RefCity ?? " ");
-      formData.append("Reference 2 State", filteredData.reference2RefState ?? " ");
-      formData.append(
-        "Reference 2 Country",
-        filteredData.reference2RefCountry ?? " "
-      );
-      formData.append(
-        "Reference 2 Relationship",
-        filteredData.reference2RelationshipToRef ?? " "
-      );
+      // formData.append(
+      //   "Reference 2 First Name",
+      //   filteredData.reference2RefFirstName ?? " "
+      // );
+      // formData.append(
+      //   "Reference 2 Last Name",
+      //   filteredData.reference2RefLastName ?? " "
+      // );
+      // formData.append("Reference 2 Email", filteredData.reference2RefEmail ?? " ");
+      // formData.append(
+      //   "Reference 2 Contact No",
+      //   filteredData.reference2RefContactNo ?? " "
+      // );
+      // formData.append("Reference 2 City", filteredData.reference2RefCity ?? " ");
+      // formData.append("Reference 2 State", filteredData.reference2RefState ?? " ");
+      // formData.append(
+      //   "Reference 2 Country",
+      //   filteredData.reference2RefCountry ?? " "
+      // );
+      // formData.append(
+      //   "Reference 2 Relationship",
+      //   filteredData.reference2RelationshipToRef ?? " "
+      // );
 
       /*----------------Append References in Request Payload------------*/
 
